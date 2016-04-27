@@ -1,3 +1,9 @@
+/*
+***APUE example***********
+***implement ls command***
+***add by huqijun*********
+*/
+
 #include "apue.h"
 #include <dirent.h>
 
