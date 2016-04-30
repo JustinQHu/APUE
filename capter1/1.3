@@ -1,0 +1,7 @@
+Q. 在1.7 节中，perror 的参数用ISO C的属性const 定义的，而stderror的整型参数没有使用此属性定义，为什么？
+char * strerror(int errnum);
+
+void perror(const char * msg);
+
+
+A. errno 的值可以被修改，是会改变的
