@@ -1,0 +1,34 @@
+Q. 在系统上验证，除了根目录，目录. 和目录.. 是不同的
+
+A.
+1.  非根目录， .  和 .. 不同，  . 指向当前目录, .. 指向父目录
+jethro@ubuntu:~/CppTest$ pwd
+/home/jethro/CppTest
+jethro@ubuntu:~/CppTest$ ls
+apue.h    copy_cpp       dailytest.cpp  error_handle.c  myls.c           tinyShell.c
+copy      copy_cpp.cpp   data           getpid          signal_handle    uid_gid
+copy_c    copy_native.c  datanew        getpid.cpp      signal_handle.c  uid_gid.c
+copy_c.c  dailytest      error_handle   myls            tinyShell
+jethro@ubuntu:~/CppTest$ dir .
+apue.h	  copy_cpp	 dailytest.cpp	error_handle.c	myls.c		 tinyShell.c
+copy	  copy_cpp.cpp	 data		getpid		signal_handle	 uid_gid
+copy_c	  copy_native.c  datanew	getpid.cpp	signal_handle.c  uid_gid.c
+copy_c.c  dailytest	 error_handle	myls		tinyShell
+jethro@ubuntu:~/CppTest$ dir ..
+apue.3e  Desktop    Downloads	      Music	Public	       Templates
+CppTest  Documents  examples.desktop  Pictures	src.3e.tar.gz  Videos
+
+2.  根目录，  . 和.. 是相同的，都指向根目录
+
+jethro@ubuntu:~/CppTest$ cd /
+jethro@ubuntu:/$ pwd
+/
+jethro@ubuntu:/$ ls
+bin   cdrom  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
+boot  dev    home  lib         lost+found  mnt    proc  run   srv   tmp  var
+jethro@ubuntu:/$ dir .
+bin   cdrom  etc   initrd.img  lib64	   media  opt	root  sbin  sys  usr  vmlinuz
+boot  dev    home  lib	       lost+found  mnt	  proc	run   srv   tmp  var
+jethro@ubuntu:/$ dir ..
+bin   cdrom  etc   initrd.img  lib64	   media  opt	root  sbin  sys  usr  vmlinuz
+boot  dev    home  lib	       lost+found  mnt	  proc	run   srv   tmp  var
