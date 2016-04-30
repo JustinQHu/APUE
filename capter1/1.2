@@ -1,0 +1,17 @@
+Q 分析1-6程序的输出，说明进程ID为852 和853 的进程发生了什么情况
+
+A. 进程ID一般是连续分配的，说明当时有其他进程被分配了852和853的进程ID
+
+验证过程：
+jethro@ubuntu:~/CppTest$ ./getpid 
+hello world from process ID2662
+jethro@ubuntu:~/CppTest$ ./getpid 
+hello world from process ID2663
+jethro@ubuntu:~/CppTest$ ./uid_gid 
+uid = 1000,gid = 1000
+jethro@ubuntu:~/CppTest$ ./getpid 
+hello world from process ID2665
+jethro@ubuntu:~/CppTest$ ./uid_gid 
+uid = 1000,gid = 1000
+jethro@ubuntu:~/CppTest$ ./getpid 
+hello world from process ID2667
