@@ -4,4 +4,6 @@ char * strerror(int errnum);
 void perror(const char * msg);
 
 
-A. errno 的值可以被修改，是会改变的
+A. strerror 参数传递是值传递，errnum 是errno 的副本，修改过errnum 不会改变errno
+  而perror 传递的是指针，通过指针可以修改errno 的值，所以需要const 限定
+  所以才有pass reference-to-const ,  对于指针也是类似情况
